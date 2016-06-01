@@ -1,0 +1,8 @@
+/_info
+/vendor
+test.php
+composer.lock
+.buildpath
+.project
+.settings
+

@@ -1,0 +1,30 @@
+{
+	"require" : {
+		"phpxmlrpc/phpxmlrpc" : "^4.0"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"PHPOneAPI\\" : "src"
+		}
+	},
+	"name" : "iddqdby/phponeapi",
+	"authors" : [{
+			"name" : "Sergey Protasevich",
+			"email" : "sergey.p@gmx.com"
+		}
+	],
+	"description" : "OpenNebula XML-RPC API CLient",
+	"type" : "library",
+	"license" : "MIT",
+	"homepage" : "https://github.com/iddqdby/phponeapi",
+	"support" : {
+		"issues" : "https://github.com/iddqdby/phponeapi/issues",
+		"source" : "https://github.com/iddqdby/phponeapi"
+	},
+	"keywords" : [
+		"OpenNebula",
+		"XML-RPC",
+		"API",
+		"client"
+	]
+}
