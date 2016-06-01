@@ -13,7 +13,7 @@
 			"email" : "sergey.p@gmx.com"
 		}
 	],
-	"description" : "OpenNebula XML-RPC API CLient",
+	"description" : "OpenNebula XML-RPC API Client",
 	"type" : "library",
 	"license" : "MIT",
 	"homepage" : "https://github.com/iddqdby/phponeapi",
