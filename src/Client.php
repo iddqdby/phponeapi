@@ -136,10 +136,24 @@ class Client {
             ->send( $request );
 
         if( $response->faultCode() ) {
-            throw new Exception( $response->faultString() );
+            throw new Exception( $response->faultString(), $response->faultCode() );
         }
 
-        return $this->toArray( $response->value() );
+        $result = $this->toArray( $response->value() );
+
+        if( !$result[0] ) {
+            throw new Exception( $result[1], $result[2] );
+        }
+
+        return $result[1];
+    }
+
+
+    public function __call( $method, array $arguments ) {
+        $matches = [];
+        preg_match( '/^(?<NAMESPACE>[a-z]+)(?<ACTION>[A-Z][a-z]+)$/u', $method, $matches );
+        $action = 'one.'.@$matches['NAMESPACE'].'.'.strtolower( (string)@$matches['ACTION'] );
+        return $this->call( $action, $arguments );
     }
 
 
