@@ -1,0 +1,6 @@
+{
+  "name": "PHPOneAPI",
+  "tagline": "OpenNebula XML-RPC API client.",
+  "body": "# PHPOneAPI\r\n\r\n[![Latest Stable Version](https://poser.pugx.org/iddqdby/phponeapi/v/stable)](https://packagist.org/packages/iddqdby/phponeapi)\r\n[![Total Downloads](https://poser.pugx.org/iddqdby/phponeapi/downloads)](https://packagist.org/packages/iddqdby/phponeapi)\r\n[![License](https://poser.pugx.org/iddqdby/phponeapi/license)](https://packagist.org/packages/iddqdby/phponeapi)\r\n\r\n## Short description\r\n\r\nThis is simple client for the OpenNebula XML-RPC API.\r\n\r\n## How to install\r\n\r\n```sh\r\ncomposer require iddqdby/phponeapi\r\n```\r\n\r\n## Homepage\r\n\r\nhttps://iddqdby.github.io/phponeapi\r\n\r\n## Versioning\r\n\r\nThis project follows the [Semantic Versioning](http://semver.org/) principles.\r\n\r\n## License\r\n\r\nThis project is licensed under the MIT License. See [LICENSE](LICENSE).\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
