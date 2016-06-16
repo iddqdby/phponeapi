@@ -43,6 +43,7 @@ class Client {
     private $ssl;
     private $host;
     private $port;
+    private $path;
     private $uri;
     private $username;
     private $password;
@@ -58,15 +59,16 @@ class Client {
      * @param bool $ssl true to use https, false to use http (optional, default is true)
      * @param int $port port (optional, default is 2633)
      */
-    public function __construct( $username, $password, $host, $ssl = true, $port = 2633 ) {
+    public function __construct( $username, $password, $host, $ssl = true, $port = 2633, $path = 'RPC2' ) {
 
         $this->username = $username;
         $this->password = $password;
         $this->ssl = $ssl;
         $this->host = $host;
         $this->port = $port;
+        $this->path = $path;
 
-        $this->uri = ( $ssl ? 'https' : 'http' ).'://'.$this->host.':'.$this->port.'/RPC2';
+        $this->uri = ( $ssl ? 'https' : 'http' ).'://'.$this->host.':'.$this->port.'/'.$this->path;
 
         $this->client = new XMLRPCClient( $this->uri );
     }
