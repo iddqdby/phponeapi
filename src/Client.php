@@ -96,7 +96,7 @@ class Client {
 
         array_unshift( $args, new XMLRPCValue( $this->username.':'.$this->password ) );
 
-        $args_prepared = array_map( function ( $arg ) {
+        $func = function ( $arg ) use ( &$func ){
             switch( gettype( $arg ) ) {
                 case 'boolean':
                     return new XMLRPCValue( $arg, XMLRPCValue::$xmlrpcBoolean );
@@ -116,6 +116,8 @@ class Client {
                         }
                     }
 
+                    $arg = array_map($func, $arg);
+
                     return new XMLRPCValue( $arg, $is_struct
                             ? XMLRPCValue::$xmlrpcStruct
                             : XMLRPCValue::$xmlrpcArray );
@@ -129,7 +131,8 @@ class Client {
                 default:
                     return new XMLRPCValue( strval( $arg ), XMLRPCValue::$xmlrpcString );
             }
-        }, $args );
+        };
+        $args_prepared = array_map( $func, $args );
 
         $request = new XMLRPCRequest( $method, $args_prepared );
 
